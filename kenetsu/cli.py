@@ -15,7 +15,7 @@ locale.setlocale(locale.LC_ALL, "C")
 
 
 def main():
-    if len(sys.argv) <= 2:
+    if len(sys.argv) < 2:
         usage(sys.argv[0])
         sys.exit(1)
     duration = int(sys.argv[1])
