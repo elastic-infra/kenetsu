@@ -1,9 +1,19 @@
-ALL: test
+ALL: build
 
-.PHONY: setupdev test lint clean
+.PHONY: setupdev build test lint clean
 
 setupdev:
 	pip install -e '.[dev]'
+
+build:
+	python setup.py sdist
+	python setup.py bdist_rpm
+
+upload-test:
+	twine upload --repository pypitest dist/*.tar.gz
+
+upload-production:
+	twine upload dist/*.tar.gz
 
 test:
 	pytest

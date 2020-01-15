@@ -29,6 +29,7 @@ setup(
             "pytest>=3",
             "coverage",
             "tox",
+            "twine",
         ],
     },
     entry_points="""
