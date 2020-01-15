@@ -27,4 +27,4 @@ lint:
 clean:
 	find . -name '*~' -delete
 	find . -name '*.pyc' -delete
-	-$(RM) -rf htmlcov/
+	-$(RM) -rf htmlcov/ dist/
