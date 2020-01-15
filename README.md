@@ -1,6 +1,16 @@
 # kenetsu
 
+## Install
+
+Uploaded to [PyPI](https://pypi.org/project/kenetsu/)
+
+```console
+pip install kenetsu
+```
+
 ## Usage
+
+This tool is intended to process `/var/log/maillog`, of which the permission is `root:root` `0600`, so it should be run as `root`.
 
 ```console
 kenetsu SECOND [LOGPATH]
