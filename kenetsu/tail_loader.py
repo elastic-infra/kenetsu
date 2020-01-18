@@ -1,6 +1,8 @@
 import os
 import time
 
+from file_read_backwards import FileReadBackwards
+
 
 class TailLoader():
     TIME_PATTERN = "%b %d %H:%M:%S"
@@ -14,14 +16,11 @@ class TailLoader():
     def readlines(self):
         """Returns continuation for reading lines which are enough new.
         """
-        do_print = False
-        with open(self.path) as f:
-            for line in f:
-                if not do_print:
-                    if self.is_new(line):
-                        do_print = True
-                    else:
-                        continue
+        do_print = True
+        with FileReadBackwards(self.path, encoding="utf-8") as frb:
+            for line in frb:
+                if not self.is_new(line):
+                    return
                 yield line.rstrip()
 
     def is_new(self, line):

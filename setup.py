@@ -24,6 +24,9 @@ setup(
                  "Topic :: Communications :: Email",
                  "Topic :: Internet :: Log Analysis",
     ],
+    install_requires=[
+                      "file_read_backwards",
+    ],
     extras_require={
         "dev": [
             "pytest>=3",
