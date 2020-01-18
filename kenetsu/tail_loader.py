@@ -9,6 +9,7 @@ class TailLoader():
         self.path = path
         self.duration = duration
         self.current = time.localtime()
+        self.current_epoch = time.mktime(self.current)
 
     def readlines(self):
         """Returns continuation for reading lines which are enough new.
@@ -29,7 +30,7 @@ class TailLoader():
         """
         logtime = time.strptime(line[0:15], TailLoader.TIME_PATTERN)
         nlogtime = time.mktime((self.current[0], ) + logtime[1:])
-        diff = time.mktime(self.current) - nlogtime
+        diff = self.current_epoch - nlogtime
         if diff <= self.duration:
             return True
         return False
