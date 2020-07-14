@@ -1,7 +1,7 @@
 import ast
 import re
 import os
-from setuptools import setup
+from setuptools import setup, find_packages
 
 PACKAGE_NAME = "kenetsu"
 
@@ -12,7 +12,7 @@ version = str(ast.literal_eval(match.group(1)))
 setup(
     name=PACKAGE_NAME,
     version=version,
-    packages=[PACKAGE_NAME],
+    packages=find_packages(),
     python_requires=">=2.7",
     description="Maillog summarizer",
     long_description="Maillog summarization tool by mail status from Postfix",
