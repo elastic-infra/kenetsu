@@ -4,7 +4,7 @@ import time
 from file_read_backwards import FileReadBackwards
 
 
-class TailLoader():
+class TailLoader:
     TIME_PATTERN = "%b %d %H:%M:%S"
 
     def __init__(self, path, duration):
@@ -30,7 +30,7 @@ class TailLoader():
         Time format of line is first 16 characters in that.
         """
         logtime = time.strptime(line[0:15], TailLoader.TIME_PATTERN)
-        nlogtime = time.mktime((self.current[0], ) + logtime[1:])
+        nlogtime = time.mktime((self.current[0],) + logtime[1:])
         diff = self.current_epoch() - nlogtime
         if diff <= self.duration:
             return True
