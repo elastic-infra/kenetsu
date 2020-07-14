@@ -1,8 +1,8 @@
 import re
 
 
-class Censor():
-    EMAIL_REGEX = r'<\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*>'
+class Censor:
+    EMAIL_REGEX = r"<\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*>"
     EMAIL_DUMMY = "<censored@example.org>"
 
     def __init__(self):

@@ -22,7 +22,7 @@ tox:
 	tox
 
 lint:
-	pycodestyle .
+	black .
 
 clean:
 	find . -name '*~' -delete

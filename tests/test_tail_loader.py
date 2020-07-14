@@ -7,7 +7,7 @@ from tail_loader import TailLoader
 
 
 class TestTailLoader(unittest.TestCase):
-    START_TS = time.localtime(time.mktime((2006, 1, 14, 12, 59, 00, 0, 0, -1)))
+    START_TS = time.localtime(time.mktime((2006, 1, 14, 12, 59, 0, 0, 0, -1)))
     TEST_DIR = os.path.abspath(os.path.dirname(__file__))
     SAMPLE_PATH = os.path.join(TEST_DIR, "sample.log")
 
@@ -41,7 +41,7 @@ class TestTailLoader(unittest.TestCase):
     def test_isnew_new(self):
         line = "Jan  2 15:04:05 localhost"
         tl = TailLoader("dummy", 10)
-        timestamp = time.mktime((2006, 1, 2, 15, 05, 06, 0, 0, -1))
+        timestamp = time.mktime((2006, 1, 2, 15, 5, 6, 0, 0, -1))
         t = time.localtime(timestamp)
         tl.current = t
         self.assertFalse(tl.is_new(line))
@@ -49,7 +49,7 @@ class TestTailLoader(unittest.TestCase):
     def test_isnew_old(self):
         line = "Jan  2 15:04:05 localhost"
         tl = TailLoader("dummy", 10)
-        timestamp = time.mktime((2006, 1, 2, 15, 04, 06, 0, 0, -1))
+        timestamp = time.mktime((2006, 1, 2, 15, 4, 6, 0, 0, -1))
         t = time.localtime(timestamp)
         tl.current = t
         self.assertTrue(tl.is_new(line))

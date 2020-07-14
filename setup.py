@@ -5,8 +5,8 @@ from setuptools import setup, find_packages
 
 PACKAGE_NAME = "kenetsu"
 
-with open(os.path.join(PACKAGE_NAME, '__init__.py')) as f:
-    match = re.search(r'__version__\s+=\s+(.*)', f.read())
+with open(os.path.join(PACKAGE_NAME, "__init__.py")) as f:
+    match = re.search(r"__version__\s+=\s+(.*)", f.read())
 version = str(ast.literal_eval(match.group(1)))
 
 setup(
@@ -21,22 +21,15 @@ setup(
     author_email="kabe@elastic-infra.com",
     license="MIT",
     classifiers=[
-                 "Topic :: Communications :: Email",
-                 "Topic :: Internet :: Log Analysis",
+        "Topic :: Communications :: Email",
+        "Topic :: Internet :: Log Analysis",
     ],
-    install_requires=[
-                      "file_read_backwards",
-    ],
-    extras_require={
-        "dev": [
-            "pytest>=3",
-            "coverage",
-            "tox",
-            "twine",
-        ],
-    },
+    install_requires=["file_read_backwards",],
+    extras_require={"dev": ["pytest>=3", "coverage", "tox", "twine",],},
     entry_points="""
         [console_scripts]
         {app}={pkg}.cli:main
-    """.format(app=PACKAGE_NAME.replace('_', '-'), pkg=PACKAGE_NAME)
+    """.format(
+        app=PACKAGE_NAME.replace("_", "-"), pkg=PACKAGE_NAME
+    ),
 )
