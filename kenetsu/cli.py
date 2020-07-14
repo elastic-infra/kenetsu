@@ -4,9 +4,9 @@ from __future__ import print_function
 import sys
 import locale
 
-from tail_loader import TailLoader
-from censor import Censor
-from maileater import MailLogEater
+from .tail_loader import TailLoader
+from .censor import Censor
+from .maileater import MailLogEater
 
 LOGPATH = "/var/log/maillog"
 
