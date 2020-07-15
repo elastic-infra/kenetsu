@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  python: circleci/python@0.2.1
+  python: circleci/python@0.3.2
 
 jobs:
   build-and-test:
@@ -9,11 +9,15 @@ jobs:
     steps:
       - checkout
       - python/load-cache
-      - python/install-deps
+      - python/install-deps:
+          dependency-file: requirements_test.txt
       - python/save-cache
       - run:
-          command: ./manage.py test
+          command: tox
           name: Test
+      - store_artifacts:
+          path: dist
+          destination: dist
 
 workflows:
   main:
