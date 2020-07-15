@@ -1,6 +1,12 @@
 # kenetsu
 
 [![CircleCI](https://circleci.com/gh/elastic-infra/kenetsu.svg?style=svg)](https://circleci.com/gh/elastic-infra/kenetsu)
+![PyPI](https://img.shields.io/pypi/v/kenetsu)
+![PyPI - License](https://img.shields.io/pypi/l/kenetsu)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/kenetsu)
+[![Code style:
+black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![Downloads](https://pepy.tech/badge/kenetsu)](https://pepy.tech/project/kenetsu)
 
 ## Install
 
