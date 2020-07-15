@@ -20,8 +20,8 @@ jobs:
       - store_test_results:
           path: test-results
       - store_artifacts:
-          path: dist
-          destination: dist
+          path: htmlcov
+          destination: htmlcov
 
 workflows:
   main:
