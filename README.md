@@ -1,5 +1,7 @@
 # kenetsu
 
+[![CircleCI](https://circleci.com/gh/elastic-infra/kenetsu.svg?style=svg)](https://circleci.com/gh/elastic-infra/kenetsu)
+
 ## Install
 
 Uploaded to [PyPI](https://pypi.org/project/kenetsu/)
