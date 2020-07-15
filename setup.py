@@ -23,6 +23,11 @@ setup(
     classifiers=[
         "Topic :: Communications :: Email",
         "Topic :: Internet :: Log Analysis",
+        "Programming Language :: Python :: 2",
+        "Programming Language :: Python :: 2.7",
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.6",
+        "Programming Language :: Python :: 3.8",
     ],
     install_requires=["file_read_backwards",],
     extras_require={"dev": ["pytest>=3", "coverage", "tox", "twine",],},
