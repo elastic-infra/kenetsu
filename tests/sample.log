@@ -1,0 +1,32 @@
+Jan 14 11:53:21 myhost postfix/smtpd[26301]: connect from ip-192-0-2-1.mydomain.test[192.0.2.1]
+Jan 14 11:53:21 myhost postfix/smtpd[26301]: 37F0049ACF: client=ip-192-0-2-1.mydomain.test[192.0.2.1]
+Jan 14 11:53:21 myhost postfix/cleanup[27885]: 37F0049ACF: message-id=<5e1d2d2137279_26263fda704fc8081065fd@host001.mail>
+Jan 14 11:53:21 myhost postfix/qmgr[2659]: 37F0049ACF: from=<bounce@bounce.example.net>, size=2736, nrcpt=1 (queue active)
+Jan 14 11:53:21 myhost postfix/smtpd[26301]: disconnect from ip-192-0-2-1.mydomain.test[192.0.2.1]
+Jan 14 11:53:21 myhost postfix/smtp[17974]: setting up TLS connection to mx2.secure.example.org[198.51.100.1]:25
+Jan 14 11:53:21 myhost postfix/smtp[17974]: Trusted TLS connection established to mx2.secure.example.org[198.51.100.1]:25: TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits)
+Jan 14 11:53:21 myhost postfix/smtp[17974]: 37F0049ACF: to=<bob@example.org>, relay=mx2.secure.example.org[198.51.100.1]:25, delay=0.42, delays=0.09/0/0.3/0.03, dsn=2.0.0, status=sent (250 ok:  Message 21127429 accepted)
+Jan 14 11:53:21 myhost postfix/qmgr[2659]: 37F0049ACF: removed
+Jan 14 12:53:26 myhost postfix/smtpd[28515]: connect from ip-192-0-2-1.mydomain.test[192.0.2.1]
+Jan 14 12:53:26 myhost postfix/smtpd[28515]: 7D06B49ACF: client=ip-192-0-2-1.mydomain.test[192.0.2.1]
+Jan 14 12:53:26 myhost postfix/cleanup[27885]: 7D06B49ACF: message-id=<f81edcf9dc791c0a0d23b26594653047@mydomain.global.test>
+Jan 14 12:53:26 myhost postfix/qmgr[2659]: 7D06B49ACF: from=<bounce+331+alice=example.net@bounce.example.net>, size=6085, nrcpt=1 (queue active)
+Jan 14 12:53:26 myhost postfix/smtpd[26301]: connect from ip-192-0-2-1.mydomain.test[192.0.2.1]
+Jan 14 12:53:26 myhost postfix/smtpd[26301]: D080C49B83: client=ip-192-0-2-1.mydomain.test[192.0.2.1]
+Jan 14 12:53:26 myhost postfix/cleanup[27885]: D080C49B83: message-id=<202001140253.00E2rQQY003131@mydomain.global.test>
+Jan 14 12:53:26 myhost postfix/qmgr[2659]: D080C49B83: from=<bounce+301+alice=example.net@bounce.example.net>, size=7660, nrcpt=1 (queue active)
+Jan 14 12:53:26 myhost postfix/smtpd[26301]: disconnect from ip-192-0-2-1.mydomain.test[192.0.2.1]
+Jan 14 12:53:26 myhost postfix/smtp[18378]: 7D06B49ACF: to=<alice@example.net>, relay=mail.example.net[192.0.2.2]:25, delay=0.44, delays=0.09/0/0.12/0.23, dsn=2.0.0, status=sent (250 2.0.0 Ok: queued as C747C124027D)
+Jan 14 12:53:26 myhost postfix/qmgr[2659]: 7D06B49ACF: removed
+Jan 14 12:57:27 myhost postfix/smtpd[28515]: disconnect from ip-192-0-2-1.mydomain.test[192.0.2.1]
+Jan 14 12:57:27 myhost postfix/smtp[18369]: D080C49B83: to=<alice@example.net>, relay=mail.example.net[192.0.2.2]:25, delay=0.67, delays=0.09/0/0.12/0.46, dsn=2.0.0, status=sent (250 2.0.0 Ok: queued as 3122334028A)
+Jan 14 12:57:27 myhost postfix/qmgr[2659]: D080C49B83: removed
+Jan 14 12:58:49 myhost postfix/smtpd[26301]: connect from ip-192-0-2-1.mydomain.test[192.0.2.1]
+Jan 14 12:58:49 myhost postfix/smtpd[26301]: 92B7449ACF: client=ip-192-0-2-1.mydomain.test[192.0.2.1]
+Jan 14 12:58:49 myhost postfix/cleanup[27885]: 92B7449ACF: message-id=<202001140253.00E2rVCH003167@mydomain.global.test>
+Jan 14 12:58:49 myhost postfix/qmgr[2659]: 92B7449ACF: from=<bounce+309+charlie=example.com@bounce.example.net>, size=5246, nrcpt=1 (queue active)
+Jan 14 12:58:49 myhost postfix/smtpd[26301]: disconnect from ip-192-0-2-1.mydomain.test[192.0.2.1]
+Jan 14 12:58:49 myhost postfix/smtp[18343]: setting up TLS connection to example.com[192.0.2.3]:25
+Jan 14 12:58:49 myhost postfix/smtp[18343]: Trusted TLS connection established to example.com[192.0.2.3]:25: TLSv1.2 with cipher DHE-RSA-AES256-GCM-SHA384 (256/256 bits)
+Jan 14 12:58:49 myhost postfix/smtp[18343]: 92B7449ACF: to=<charlie@example.com>, relay=example.com[192.0.2.3]:25, delay=0.27, delays=0.09/0/0.15/0.03, dsn=2.0.0, status=sent (250 2.0.0 00E2rVP2000281 Message accepted for delivery)
+Jan 14 12:58:49 myhost postfix/qmgr[2659]: 92B7449ACF: removed
