@@ -30,8 +30,10 @@ class TestTailLoader(unittest.TestCase):
         self.assertEqual(eater.counter, self.expected)
 
     def test_eat_bounced(self):
-        eater = MailLogEater()
-        eater.eat("xxx status=bounced xxx")
+        eater = MailLogEater(["postfix/local"])
+        eater.eat("postfix/smtp[11111] 1234ABCD: status=bounced xxx")
+        # This line should be excluded
+        eater.eat("postfix/local[11111] 1234ABCD: yyy status=bounced yyy")
         self.expected["bounced"] = 1
         self.assertEqual(eater.counter, self.expected)
 
