@@ -1,19 +1,16 @@
 version: 2.1
 
 orbs:
-  python: circleci/python@0.3.2
+  python: circleci/python@2.1.1
 
 jobs:
   build-and-test:
     executor: python/default
     steps:
       - checkout
-      - python/load-cache:
-          dependency-file: requirements_test.txt
-      - python/install-deps:
-          dependency-file: requirements_test.txt
-      - python/save-cache:
-          dependency-file: requirements_test.txt
+      - python/install-packages:
+          pip-dependency-file: requirements_test.txt
+          pkg-manager: pip
       - run:
           command: tox
           name: Test
