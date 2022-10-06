@@ -30,7 +30,7 @@ setup(
         "Programming Language :: Python :: 3.8",
     ],
     install_requires=[
-        "file_read_backwards",
+        "file-read-backwards",
     ],
     extras_require={
         "dev": [
