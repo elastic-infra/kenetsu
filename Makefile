@@ -10,7 +10,7 @@ build:
 	python setup.py bdist_rpm
 
 upload-test:
-	twine upload --repository pypitest dist/*.tar.gz
+	twine upload --repository testpypi dist/*.tar.gz
 
 upload-production:
 	twine upload dist/*.tar.gz
