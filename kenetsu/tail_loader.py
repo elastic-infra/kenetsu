@@ -1,4 +1,3 @@
-import os
 import time
 
 from file_read_backwards import FileReadBackwards
@@ -16,8 +15,7 @@ class TailLoader:
         return time.mktime(self.current)
 
     def readlines(self):
-        """Returns continuation for reading lines which are enough new.
-        """
+        """Returns continuation for reading lines which are enough new."""
         do_print = True
         with FileReadBackwards(self.path, encoding="utf-8") as frb:
             for line in frb:

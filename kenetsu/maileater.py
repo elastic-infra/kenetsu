@@ -3,7 +3,8 @@ import json
 
 
 class MailLogEater:
-    def __init__(self):
+    def __init__(self, excl_pats=[]):
+        self.exclude_patterns = [re.compile(pat) for pat in excl_pats]
         self.counter = {
             "bounced": 0,
             "deferred": 0,
@@ -15,6 +16,8 @@ class MailLogEater:
         return self.format("json")
 
     def eat(self, line):
+        if any([pat.search(line) for pat in self.exclude_patterns]):
+            return False
         for s in self.counter.keys():
             matcher = "status=" + s
             if matcher in line:

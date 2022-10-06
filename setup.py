@@ -29,8 +29,17 @@ setup(
         "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.8",
     ],
-    install_requires=["file_read_backwards",],
-    extras_require={"dev": ["pytest>=3", "coverage", "tox", "twine",],},
+    install_requires=[
+        "file-read-backwards",
+    ],
+    extras_require={
+        "dev": [
+            "pytest>=3",
+            "coverage",
+            "tox",
+            "twine",
+        ],
+    },
     entry_points="""
         [console_scripts]
         {app}={pkg}.cli:main

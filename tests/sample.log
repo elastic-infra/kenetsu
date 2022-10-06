@@ -7,6 +7,11 @@ Jan 14 11:53:21 myhost postfix/smtp[17974]: setting up TLS connection to mx2.sec
 Jan 14 11:53:21 myhost postfix/smtp[17974]: Trusted TLS connection established to mx2.secure.example.org[198.51.100.1]:25: TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits)
 Jan 14 11:53:21 myhost postfix/smtp[17974]: 37F0049ACF: to=<bob@example.org>, relay=mx2.secure.example.org[198.51.100.1]:25, delay=0.42, delays=0.09/0/0.3/0.03, dsn=2.0.0, status=sent (250 ok:  Message 21127429 accepted)
 Jan 14 11:53:21 myhost postfix/qmgr[2659]: 37F0049ACF: removed
+Jan 14 12:20:19 myhost postfix/cleanup[23078]: 8FCBA892E85: message-id=<20201005075519.8FCBA892E85@example.org>
+Jan 14 12:20:19 myhost postfix/bounce[23073]: E812D892E89: sender non-delivery notification: 8FCBA892E85
+Jan 14 12:20:19 myhost postfix/qmgr[22075]: 8FCBA892E85: from=<>, size=45859, nrcpt=1 (queue active)
+Jan 14 12:20:19 myhost postfix/local[22430]: 8FCBA892E85: to=<noreply@example.org>, relay=local, delay=0, delays=0/0/0/0, dsn=5.1.1, status=bounced (unknown user: "noreply")
+Jan 14 12:20:19 myhost postfix/qmgr[22075]: 8FCBA892E85: removed
 Jan 14 12:53:26 myhost postfix/smtpd[28515]: connect from ip-192-0-2-1.mydomain.test[192.0.2.1]
 Jan 14 12:53:26 myhost postfix/smtpd[28515]: 7D06B49ACF: client=ip-192-0-2-1.mydomain.test[192.0.2.1]
 Jan 14 12:53:26 myhost postfix/cleanup[27885]: 7D06B49ACF: message-id=<f81edcf9dc791c0a0d23b26594653047@mydomain.global.test>

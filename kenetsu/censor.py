@@ -9,6 +9,5 @@ class Censor:
         self.regex = re.compile(Censor.EMAIL_REGEX)
 
     def censor(self, line):
-        """Returns censored string
-        """
+        """Returns censored string"""
         return self.regex.sub(Censor.EMAIL_DUMMY, line)

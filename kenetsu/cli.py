@@ -3,6 +3,7 @@
 from __future__ import print_function
 import sys
 import locale
+import argparse
 
 from .tail_loader import TailLoader
 from .censor import Censor
@@ -15,16 +16,31 @@ locale.setlocale(locale.LC_ALL, "C")
 
 
 def main():
-    if len(sys.argv) < 2:
-        usage(sys.argv[0])
-        sys.exit(1)
-    duration = int(sys.argv[1])
-    logpath = LOGPATH
-    if len(sys.argv) >= 3:
-        logpath = sys.argv[2]
+    parser = argparse.ArgumentParser(description="kenetsu")
+    parser.add_argument(
+        "--exclude-pattern",
+        metavar="PAT",
+        dest="excl_pats",
+        type=str,
+        help="Exclude pattern of lines",
+        default="postfix/local",
+    )
+    parser.add_argument(
+        "duration", metavar="SECOND", type=int, help="Duration seconds to load"
+    )
+    parser.add_argument(
+        "logpath",
+        metavar="FILE",
+        type=str,
+        help="Log file path to load",
+        default=LOGPATH,
+    )
+    args = parser.parse_args()
+    duration = args.duration
+    logpath = args.logpath
     loader = TailLoader(logpath, duration)
     censor = Censor()
-    eater = MailLogEater()
+    eater = MailLogEater([args.excl_pats])
     for rawline in loader.readlines():
         line = censor.censor(rawline)
         eater.eat(line)
